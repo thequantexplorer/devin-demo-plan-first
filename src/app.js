@@ -3,6 +3,7 @@ import { readFile } from 'node:fs/promises';
 import { extname } from 'node:path';
 import { loadInvoices, listInvoices, getInvoice, summarize } from './invoices.js';
 import { parseFilters, FilterError } from './filters.js';
+import { invoicesToCsv } from './csv.js';
 
 const PUBLIC_DIR = new URL('../public/', import.meta.url);
 const STATIC_FILES = { '/': 'index.html', '/app.js': 'app.js', '/styles.css': 'styles.css' };
@@ -30,6 +31,15 @@ export function createApp({ invoices = loadInvoices() } = {}) {
       if (pathname === '/api/invoices') {
         const list = listInvoices(invoices, parseFilters(url.searchParams));
         return sendJson(res, 200, { invoices: list, summary: summarize(list) });
+      }
+
+      if (pathname === '/api/invoices/export.csv') {
+        const list = listInvoices(invoices, parseFilters(url.searchParams));
+        res.writeHead(200, {
+          'Content-Type': 'text/csv; charset=utf-8',
+          'Content-Disposition': 'attachment; filename="invoices.csv"',
+        });
+        return res.end(invoicesToCsv(list));
       }
 
       const match = pathname.match(/^\/api\/invoices\/([^/]+)$/);
