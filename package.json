@@ -1,0 +1,15 @@
+{
+  "name": "ledgerly-invoices",
+  "version": "0.4.0",
+  "private": true,
+  "description": "Small invoices app: a JSON API and one web page for listing and filtering invoices",
+  "type": "module",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test"
+  }
+}

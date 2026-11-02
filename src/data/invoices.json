@@ -1,0 +1,175 @@
+[
+  {
+    "id": "inv_1001",
+    "number": "INV-1001",
+    "customer": "Acme Corp",
+    "issueDate": "2026-07-01",
+    "dueDate": "2026-07-31",
+    "status": "paid",
+    "paidAt": "2026-07-20",
+    "currency": "USD",
+    "taxRateBps": 825,
+    "lineItems": [
+      { "description": "Website redesign", "quantity": 1, "unitPriceCents": 480000 },
+      { "description": "Hosting (12 months)", "quantity": 12, "unitPriceCents": 2500 }
+    ]
+  },
+  {
+    "id": "inv_1002",
+    "number": "INV-1002",
+    "customer": "Smith, Jones & Co",
+    "issueDate": "2026-07-05",
+    "dueDate": "2026-08-04",
+    "status": "paid",
+    "paidAt": "2026-08-01",
+    "currency": "USD",
+    "taxRateBps": 0,
+    "lineItems": [
+      { "description": "Bookkeeping, July", "quantity": 1, "unitPriceCents": 95000 }
+    ]
+  },
+  {
+    "id": "inv_1003",
+    "number": "INV-1003",
+    "customer": "The \"Blue Door\" Café",
+    "issueDate": "2026-07-12",
+    "dueDate": "2026-08-11",
+    "status": "overdue",
+    "paidAt": null,
+    "currency": "EUR",
+    "taxRateBps": 2000,
+    "lineItems": [
+      { "description": "Menu photography", "quantity": 3, "unitPriceCents": 15000 },
+      { "description": "Print-ready files", "quantity": 1, "unitPriceCents": 4999 }
+    ]
+  },
+  {
+    "id": "inv_1004",
+    "number": "INV-1004",
+    "customer": "Globex",
+    "issueDate": "2026-08-02",
+    "dueDate": "2026-09-01",
+    "status": "paid",
+    "paidAt": "2026-08-29",
+    "currency": "USD",
+    "taxRateBps": 825,
+    "lineItems": [
+      { "description": "API integration", "quantity": 40, "unitPriceCents": 15000 },
+      { "description": "Code review", "quantity": 6, "unitPriceCents": 12500 }
+    ]
+  },
+  {
+    "id": "inv_1005",
+    "number": "INV-1005",
+    "customer": "Initech",
+    "issueDate": "2026-08-15",
+    "dueDate": "2026-09-14",
+    "status": "void",
+    "paidAt": null,
+    "currency": "USD",
+    "taxRateBps": 825,
+    "lineItems": [
+      { "description": "TPS report automation", "quantity": 1, "unitPriceCents": 250000 }
+    ]
+  },
+  {
+    "id": "inv_1006",
+    "number": "INV-1006",
+    "customer": "Acme Corp",
+    "issueDate": "2026-09-01",
+    "dueDate": "2026-10-01",
+    "status": "overdue",
+    "paidAt": null,
+    "currency": "USD",
+    "taxRateBps": 825,
+    "lineItems": [
+      { "description": "Monthly retainer, September", "quantity": 1, "unitPriceCents": 300000 },
+      { "description": "Extra support hours", "quantity": 7, "unitPriceCents": 11000 }
+    ]
+  },
+  {
+    "id": "inv_1007",
+    "number": "INV-1007",
+    "customer": "=HYPERLINK(\"http://example.com\",\"Click me\")",
+    "issueDate": "2026-09-10",
+    "dueDate": "2026-10-10",
+    "status": "draft",
+    "paidAt": null,
+    "currency": "USD",
+    "taxRateBps": 0,
+    "lineItems": [
+      { "description": "Imported from the public signup form", "quantity": 1, "unitPriceCents": 1000 }
+    ]
+  },
+  {
+    "id": "inv_1008",
+    "number": "INV-1008",
+    "customer": "Müller GmbH",
+    "issueDate": "2026-09-18",
+    "dueDate": "2026-10-18",
+    "status": "paid",
+    "paidAt": "2026-10-02",
+    "currency": "EUR",
+    "taxRateBps": 1900,
+    "lineItems": [
+      { "description": "Translation, 12,000 words", "quantity": 12, "unitPriceCents": 9000 }
+    ]
+  },
+  {
+    "id": "inv_1009",
+    "number": "INV-1009",
+    "customer": "Globex",
+    "issueDate": "2026-10-01",
+    "dueDate": "2026-10-31",
+    "status": "sent",
+    "paidAt": null,
+    "currency": "USD",
+    "taxRateBps": 825,
+    "lineItems": [
+      { "description": "API integration, phase 2", "quantity": 24, "unitPriceCents": 15000 }
+    ]
+  },
+  {
+    "id": "inv_1010",
+    "number": "INV-1010",
+    "customer": "Acme Corp",
+    "issueDate": "2026-10-01",
+    "dueDate": "2026-10-31",
+    "status": "sent",
+    "paidAt": null,
+    "currency": "USD",
+    "taxRateBps": 825,
+    "lineItems": [
+      { "description": "Monthly retainer, October", "quantity": 1, "unitPriceCents": 300000 }
+    ]
+  },
+  {
+    "id": "inv_1011",
+    "number": "INV-1011",
+    "customer": "Northwind Traders",
+    "issueDate": "2026-10-14",
+    "dueDate": "2026-11-13",
+    "status": "sent",
+    "paidAt": null,
+    "currency": "USD",
+    "taxRateBps": 650,
+    "lineItems": [
+      { "description": "Warehouse dashboard", "quantity": 1, "unitPriceCents": 725050 },
+      { "description": "Training session", "quantity": 2, "unitPriceCents": 45000 }
+    ]
+  },
+  {
+    "id": "inv_1012",
+    "number": "INV-1012",
+    "customer": "Initech",
+    "issueDate": "2026-10-20",
+    "dueDate": "2026-11-19",
+    "status": "draft",
+    "paidAt": null,
+    "currency": "USD",
+    "taxRateBps": 825,
+    "lineItems": [
+      { "description": "Printer driver fix\nOn-site visit included", "quantity": 1, "unitPriceCents": 60000 }
+    ]
+  }
+]

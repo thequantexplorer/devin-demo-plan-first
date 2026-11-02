@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ledgerly · Invoices</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Invoices</h1>
+    <p id="summary" class="muted"></p>
+  </header>
+
+  <form id="filters">
+    <label>Status
+      <select name="status">
+        <option value="">All</option>
+        <option value="draft">Draft</option>
+        <option value="sent">Sent</option>
+        <option value="paid">Paid</option>
+        <option value="overdue">Overdue</option>
+        <option value="void">Void</option>
+      </select>
+    </label>
+    <label>Customer <input name="customer" type="search" placeholder="Name contains…"></label>
+    <label>From <input name="from" type="date"></label>
+    <label>To <input name="to" type="date"></label>
+    <div class="actions">
+      <button type="submit">Apply</button>
+      <button type="reset" class="secondary">Clear</button>
+    </div>
+  </form>
+
+  <p id="error" class="error" hidden></p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Number</th><th>Customer</th><th>Issued</th><th>Due</th><th>Status</th><th class="num">Total</th>
+      </tr>
+    </thead>
+    <tbody id="rows"></tbody>
+  </table>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
