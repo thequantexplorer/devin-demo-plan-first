@@ -2,6 +2,7 @@ const form = document.getElementById('filters');
 const rows = document.getElementById('rows');
 const summary = document.getElementById('summary');
 const error = document.getElementById('error');
+const exportButton = document.getElementById('export');
 
 const SYMBOLS = { USD: '$', EUR: '€' };
 
@@ -67,5 +68,25 @@ form.addEventListener('submit', (event) => {
   load();
 });
 form.addEventListener('reset', () => setTimeout(load));
+
+async function exportCsv() {
+  const query = currentQuery();
+  const res = await fetch(`/api/invoices/export.csv${query ? `?${query}` : ''}`);
+
+  error.hidden = res.ok;
+  if (!res.ok) {
+    error.textContent = (await res.json()).error;
+    return;
+  }
+
+  const href = URL.createObjectURL(await res.blob());
+  const link = document.createElement('a');
+  link.href = href;
+  link.download = 'invoices.csv';
+  link.click();
+  URL.revokeObjectURL(href);
+}
+
+exportButton.addEventListener('click', exportCsv);
 
 load();

@@ -14,6 +14,7 @@ npm start   # http://localhost:3000
 | --- | --- |
 | `GET /api/health` | `{ "ok": true }` |
 | `GET /api/invoices` | `{ invoices, summary }`. Optional filters: `status`, `customer`, `from`, `to` (dates like `2026-10-01`) |
+| `GET /api/invoices/export.csv` | The same invoices as a CSV download (`text/csv`, `invoices.csv`). Same filters and `400` errors as `GET /api/invoices` |
 | `GET /api/invoices/:id` | One invoice with `subtotalCents`, `taxCents` and `totalCents` |
 
 A bad filter returns `400` with `{ "error": "..." }`.
@@ -26,7 +27,8 @@ A bad filter returns `400` with `{ "error": "..." }`.
 | `src/app.js` | Routes and static files |
 | `src/invoices.js` | Loads, filters and totals invoices |
 | `src/filters.js` | Checks the query string filters |
-| `src/money.js` | Formats cents for display |
+| `src/csv.js` | Builds the CSV export (RFC 4180 quoting, formula guard) |
+| `src/money.js` | Formats cents for display and for CSV |
 | `src/data/invoices.json` | Seed data |
 | `public/` | The web page |
 | `test/` | Tests |
